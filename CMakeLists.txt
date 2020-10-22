@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.17)
+project(FrameNet)
+set(CMAKE_CXX_STANDARD 17)
+include_directories(include)
+link_directories(library)
+add_library(FrameNet LexicalUnit.cpp LexicalUnit.h Frame.cpp Frame.h FrameNet.cpp FrameNet.h)
