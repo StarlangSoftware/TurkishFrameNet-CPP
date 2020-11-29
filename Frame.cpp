@@ -36,6 +36,7 @@ void Frame::removeLexicalUnit(LexicalUnit toBeRemoved) {
     for (int i = 0; i < lexicalUnits.size(); i++){
         if (lexicalUnits[i].getSynSetId() == toBeRemoved.getSynSetId()){
             lexicalUnits.erase(lexicalUnits.begin() + i);
+            break;
         }
     }
 }
