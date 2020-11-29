@@ -11,11 +11,13 @@ using namespace std;
 class FrameElement {
 private:
     string frameElementType;
+    string frame;
     string id;
 public:
-    FrameElement(string frameElement);
-    FrameElement(string frameElementType, string id);
+    explicit FrameElement(string frameElement);
+    FrameElement(string frameElementType, string frame, string id);
     string getFrameElementType();
+    string getFrame();
     string getId();
     string to_string();
 };

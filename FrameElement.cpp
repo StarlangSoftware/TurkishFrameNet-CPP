@@ -17,7 +17,8 @@ using namespace std;
 FrameElement::FrameElement(string frameElement) {
     if (frameElement.find('$') != string::npos){
         frameElementType = frameElement.substr(0, frameElement.find('$'));
-        id = frameElement.substr(frameElement.find('$') + 1);
+        frame = frameElement.substr(frameElement.rfind('$') + 1, frameElement.rfind('$'));
+        id = frameElement.substr(frameElement.rfind('$') + 1);
     } else {
         frameElementType = "NONE";
     }
@@ -29,8 +30,9 @@ FrameElement::FrameElement(string frameElement) {
  * @param argumentType  Type of the frameElement
  * @param id  Id of the frameElement
  */
-FrameElement::FrameElement(string frameElementType, string id) {
+FrameElement::FrameElement(string frameElementType, string frame, string id) {
     this->frameElementType = move(frameElementType);
+    this->frame = move(frame);
     this->id = move(id);
 }
 
@@ -53,6 +55,15 @@ string FrameElement::getId() {
 }
 
 /**
+ * Accessor for frame.
+ *
+ * @return frame.
+ */
+string FrameElement::getFrame() {
+    return frame;
+}
+
+/**
  * to_string converts an {@link FrameElement} to a string. If the frameElementType is "NONE" returns only "NONE", otherwise
  * it returns frameElement string which is in the form of frameElementType$id
  *
@@ -65,3 +76,4 @@ string FrameElement::to_string() {
         return frameElementType + "$" + id;
     }
 }
+

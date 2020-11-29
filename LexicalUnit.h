@@ -18,6 +18,7 @@ private:
 public:
     explicit LexicalUnit(XmlElement* node);
     int size();
+    string getSynSetId();
     vector<string> getFrameElements();
 };
 

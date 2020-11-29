@@ -15,6 +15,25 @@ FrameNet::FrameNet() {
     inputStream.close();
 }
 
+bool FrameNet::lexicalUnitExists(string synSetId) {
+    for (Frame frame : frames){
+        if (frame.lexicalUnitExists(synSetId)){
+            return true;
+        }
+    }
+    return false;
+}
+
+vector<Frame> FrameNet::getFrames(string synSetId) {
+    vector<Frame> result;
+    for (Frame frame : frames){
+        if (frame.lexicalUnitExists(synSetId)){
+            result.emplace_back(frame);
+        }
+    }
+    return result;
+}
+
 int FrameNet::size() {
     return frames.size();
 }

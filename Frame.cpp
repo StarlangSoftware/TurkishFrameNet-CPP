@@ -15,6 +15,31 @@ Frame::Frame(string name, XmlDocument xmlDocument) {
     }
 }
 
+bool Frame::lexicalUnitExists(string synSetId) {
+    for (LexicalUnit lexicalUnit : lexicalUnits){
+        if (lexicalUnit.getSynSetId() == synSetId){
+            return true;
+        }
+    }
+    return false;
+}
+
+LexicalUnit Frame::getLexicalUnitWithId(string synSetId) {
+    for (LexicalUnit lexicalUnit : lexicalUnits){
+        if (lexicalUnit.getSynSetId() == synSetId){
+            return lexicalUnit;
+        }
+    }
+}
+
+void Frame::removeLexicalUnit(LexicalUnit toBeRemoved) {
+    for (int i = 0; i < lexicalUnits.size(); i++){
+        if (lexicalUnits[i].getSynSetId() == toBeRemoved.getSynSetId()){
+            lexicalUnits.erase(lexicalUnits.begin() + i);
+        }
+    }
+}
+
 LexicalUnit Frame::getLexicalUnit(int index) {
     return lexicalUnits.at(index);
 }

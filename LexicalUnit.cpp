@@ -14,6 +14,10 @@ LexicalUnit::LexicalUnit(XmlElement *node) {
     }
 }
 
+string LexicalUnit::getSynSetId() {
+    return synSetId;
+}
+
 int LexicalUnit::size() {
     return frameElements.size();
 }

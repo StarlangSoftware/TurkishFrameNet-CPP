@@ -18,6 +18,9 @@ private:
     vector<LexicalUnit> lexicalUnits;
 public:
     Frame(string name, XmlDocument xmlDocument);
+    bool lexicalUnitExists(string synSetId);
+    LexicalUnit getLexicalUnitWithId(string synSetId);
+    void removeLexicalUnit(LexicalUnit toBeRemoved);
     LexicalUnit getLexicalUnit(int index);
     int size();
     string getName();
