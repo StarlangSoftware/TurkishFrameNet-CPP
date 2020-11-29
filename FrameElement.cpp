@@ -73,7 +73,7 @@ string FrameElement::to_string() {
     if (frameElementType == "NONE"){
         return frameElementType;
     } else {
-        return frameElementType + "$" + id;
+        return frameElementType + "$" + frame + "$" + id;
     }
 }
 
