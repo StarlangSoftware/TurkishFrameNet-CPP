@@ -5,14 +5,27 @@
 #include "FrameNet.h"
 
 FrameNet::FrameNet() {
-    ifstream inputStream;
-    string fileName;
-    inputStream.open("../files.txt", ifstream::in);
-    while (inputStream.good()){
-        getline(inputStream, fileName);
-        frames.emplace_back(Frame(fileName.substr(0, fileName.find(".xml")), XmlDocument("../Frames/" + fileName)));
+    XmlDocument xmlDocument = XmlDocument("framenet.xml");
+    xmlDocument.parse();
+    XmlElement* rootNode = xmlDocument.getFirstChild();
+    XmlElement* frameNode = rootNode->getFirstChild();
+    while (frameNode != nullptr){
+        Frame currentFrame = Frame(frameNode->getAttributeValue("NAME"));
+        XmlElement* lexicalUnits = frameNode->getFirstChild();
+        XmlElement* lexicalUnit = lexicalUnits->getFirstChild();
+        while (lexicalUnit != nullptr){
+            currentFrame.addLexicalUnit(lexicalUnit->getPcData());
+            lexicalUnit = lexicalUnit->getNextSibling();
+        }
+        XmlElement* frameElements = lexicalUnits->getNextSibling();
+        XmlElement* frameElement = frameElements->getFirstChild();
+        while (frameElement != nullptr){
+            currentFrame.addFrameElement(frameElement->getPcData());
+            frameElement = frameElement->getNextSibling();
+        }
+        frames.emplace_back(currentFrame);
+        frameNode = frameNode->getNextSibling();
     }
-    inputStream.close();
 }
 
 bool FrameNet::lexicalUnitExists(string synSetId) {

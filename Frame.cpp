@@ -5,50 +5,43 @@
 #include "Frame.h"
 #include <utility>
 
-Frame::Frame(string name, XmlDocument xmlDocument) {
-    XmlElement* node;
+Frame::Frame(string name) {
     this->name = std::move(name);
-    node = xmlDocument.getFirstChild();
-    while (node != nullptr){
-        lexicalUnits.emplace_back(LexicalUnit(node));
-        node = node->getNextSibling();
-    }
 }
 
 bool Frame::lexicalUnitExists(string synSetId) {
-    for (LexicalUnit lexicalUnit : lexicalUnits){
-        if (lexicalUnit.getSynSetId() == synSetId){
+    for (const string& lexicalUnit : lexicalUnits){
+        if (lexicalUnit == synSetId){
             return true;
         }
     }
     return false;
 }
 
-LexicalUnit Frame::getLexicalUnitWithId(string synSetId) {
-    for (LexicalUnit lexicalUnit : lexicalUnits){
-        if (lexicalUnit.getSynSetId() == synSetId){
-            return lexicalUnit;
-        }
-    }
-}
-
-void Frame::removeLexicalUnit(LexicalUnit toBeRemoved) {
-    for (int i = 0; i < lexicalUnits.size(); i++){
-        if (lexicalUnits[i].getSynSetId() == toBeRemoved.getSynSetId()){
-            lexicalUnits.erase(lexicalUnits.begin() + i);
-            break;
-        }
-    }
-}
-
-LexicalUnit Frame::getLexicalUnit(int index) {
+string Frame::getLexicalUnit(int index) {
     return lexicalUnits.at(index);
 }
 
-int Frame::size() {
+string Frame::getFrameElement(int index) {
+    return frameElements.at(index);
+}
+
+int Frame::lexicalUnitSize() {
     return lexicalUnits.size();
+}
+
+int Frame::frameElementSize() {
+    return frameElements.size();
 }
 
 string Frame::getName() {
     return name;
+}
+
+void Frame::addLexicalUnit(string lexicalUnit) {
+    lexicalUnits.emplace_back(lexicalUnit);
+}
+
+void Frame::addFrameElement(string frameElement) {
+    frameElements.emplace_back(frameElement);
 }
