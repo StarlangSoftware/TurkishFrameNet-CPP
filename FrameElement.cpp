@@ -17,7 +17,7 @@ using namespace std;
 FrameElement::FrameElement(string frameElement) {
     if (frameElement.find('$') != string::npos){
         frameElementType = frameElement.substr(0, frameElement.find('$'));
-        frame = frameElement.substr(frameElement.rfind('$') + 1, frameElement.rfind('$'));
+        frame = frameElement.substr(frameElement.find('$') + 1, frameElement.rfind('$') - frameElement.find('$') - 1);
         id = frameElement.substr(frameElement.rfind('$') + 1);
     } else {
         frameElementType = "NONE";

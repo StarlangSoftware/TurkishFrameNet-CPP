@@ -3,4 +3,8 @@ project(FrameNet)
 set(CMAKE_CXX_STANDARD 17)
 include_directories(include)
 link_directories(library)
+
 add_library(FrameNet Frame.cpp Frame.h FrameNet.cpp FrameNet.h FrameElement.cpp FrameElement.h)
+target_link_libraries(FrameNet XmlParser)
+add_executable(Test Frame.cpp Frame.h FrameNet.cpp FrameNet.h FrameElement.cpp FrameElement.h Test/catch.hpp Test/FrameElementTest.cpp Test/FrameNetTest.cpp)
+target_link_libraries(Test XmlParser)
