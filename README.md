@@ -77,7 +77,7 @@ Detailed Description
 
 FrameNet'i okumak ve tüm Frameleri hafızada tutmak için
 
-	a = FrameNet();
+	a = new FrameNet();
 
 Frameleri tek tek gezmek için
 
