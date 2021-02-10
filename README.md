@@ -67,6 +67,38 @@ Result: The imported project is listed in the Project Explorer view and files ar
 
 After being done with the downloading and opening project, select **Build Project** option from **Build** menu. After compilation process, user can run TurkishFrameNet-CPP.
 
+Detailed Description
+============
+
++ [FrameNet](#framenet)
++ [Frame](#frame)
+
+## FrameNet
+
+FrameNet'i okumak ve tüm Frameleri hafızada tutmak için
+
+	a = FrameNet();
+
+Frameleri tek tek gezmek için
+
+	for (int i = 0; i < a.size(); i++){
+		Frame frame = a.getFrame(i);
+	}
+
+Bir fiile ait olan Frameleri bulmak için
+
+	frames = a.getFrames("TUR10-1234560")
+
+## Frame
+
+Bir framein lexical unitlerini getirmek için
+
+	string getLexicalUnit(int index)
+		
+Bir framein frame elementlerini getirmek için
+
+	string getFrameElement(int index)
+
 # Cite
 
 	@inproceedings{marsan20,
