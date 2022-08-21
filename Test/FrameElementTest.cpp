@@ -4,7 +4,7 @@
 
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "../FrameElement.h"
+#include "../src/FrameElement.h"
 
 TEST_CASE("FrameElement-testFrameElement") {
     FrameElement frameElement = FrameElement("Agent$Apply_Heat$TUR10-0100230");

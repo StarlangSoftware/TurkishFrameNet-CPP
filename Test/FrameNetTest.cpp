@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../FrameNet.h"
+#include "../src/FrameNet.h"
 #include <unordered_set>
 
 using namespace std;

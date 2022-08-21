@@ -5,7 +5,7 @@
 #include "FrameNet.h"
 
 FrameNet::FrameNet() {
-    XmlDocument xmlDocument = XmlDocument("../framenet.xml");
+    XmlDocument xmlDocument = XmlDocument("framenet.xml");
     xmlDocument.parse();
     XmlElement* rootNode = xmlDocument.getFirstChild();
     XmlElement* frameNode = rootNode->getFirstChild();
