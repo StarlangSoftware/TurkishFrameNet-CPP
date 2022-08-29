@@ -4,18 +4,14 @@
 
 #include "Frame.h"
 #include <utility>
+#include <algorithm>
 
 Frame::Frame(string name) {
     this->name = std::move(name);
 }
 
 bool Frame::lexicalUnitExists(string synSetId) {
-    for (const string& lexicalUnit : lexicalUnits){
-        if (lexicalUnit == synSetId){
-            return true;
-        }
-    }
-    return false;
+    return find(lexicalUnits.begin(), lexicalUnits.end(), synSetId) != lexicalUnits.end();
 }
 
 string Frame::getLexicalUnit(int index) {
