@@ -14,8 +14,8 @@ private:
     string frame;
     string id;
 public:
-    explicit FrameElement(string frameElement);
-    FrameElement(string frameElementType, string frame, string id);
+    explicit FrameElement(const string& frameElement);
+    FrameElement(const string& _frameElementType, const string& _frame, const string& _id);
     string getFrameElementType();
     string getFrame();
     string getId();

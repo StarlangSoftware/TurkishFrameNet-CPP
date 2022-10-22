@@ -6,11 +6,11 @@
 #include <utility>
 #include <algorithm>
 
-Frame::Frame(string name) {
-    this->name = std::move(name);
+Frame::Frame(const string& _name) {
+    this->name = _name;
 }
 
-bool Frame::lexicalUnitExists(string synSetId) {
+bool Frame::lexicalUnitExists(const string& synSetId) {
     return find(lexicalUnits.begin(), lexicalUnits.end(), synSetId) != lexicalUnits.end();
 }
 
@@ -34,10 +34,10 @@ string Frame::getName() {
     return name;
 }
 
-void Frame::addLexicalUnit(string lexicalUnit) {
+void Frame::addLexicalUnit(const string& lexicalUnit) {
     lexicalUnits.emplace_back(lexicalUnit);
 }
 
-void Frame::addFrameElement(string frameElement) {
+void Frame::addFrameElement(const string& frameElement) {
     frameElements.emplace_back(frameElement);
 }

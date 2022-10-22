@@ -14,7 +14,7 @@ using namespace std;
  *
  * @param argument  FrameElement string containing the frameElementType and id
  */
-FrameElement::FrameElement(string frameElement) {
+FrameElement::FrameElement(const string& frameElement) {
     if (frameElement.find('$') != string::npos){
         frameElementType = frameElement.substr(0, frameElement.find('$'));
         frame = frameElement.substr(frameElement.find('$') + 1, frameElement.rfind('$') - frameElement.find('$') - 1);
@@ -25,15 +25,15 @@ FrameElement::FrameElement(string frameElement) {
 }
 
 /**
- * Another constructor of {@link FrameElement} class which takes frameElementType and id as inputs and initializes corresponding attributes
+ * Another constructor of {@link FrameElement} class which takes _frameElementType and _id as inputs and initializes corresponding attributes
  *
  * @param argumentType  Type of the frameElement
- * @param id  Id of the frameElement
+ * @param _id  Id of the frameElement
  */
-FrameElement::FrameElement(string frameElementType, string frame, string id) {
-    this->frameElementType = move(frameElementType);
-    this->frame = move(frame);
-    this->id = move(id);
+FrameElement::FrameElement(const string& _frameElementType, const string& _frame, const string& _id) {
+    this->frameElementType = _frameElementType;
+    this->frame = _frame;
+    this->id = _id;
 }
 
 /**

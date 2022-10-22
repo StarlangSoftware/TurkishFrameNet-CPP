@@ -17,10 +17,10 @@ private:
     vector<string> lexicalUnits;
     vector<string> frameElements;
 public:
-    explicit Frame(string name);
-    bool lexicalUnitExists(string synSetId);
-    void addLexicalUnit(string lexicalUnit);
-    void addFrameElement(string frameElement);
+    explicit Frame(const string& _name);
+    bool lexicalUnitExists(const string& synSetId);
+    void addLexicalUnit(const string& lexicalUnit);
+    void addFrameElement(const string& frameElement);
     string getLexicalUnit(int index);
     string getFrameElement(int index);
     int lexicalUnitSize();

@@ -28,7 +28,7 @@ FrameNet::FrameNet() {
     }
 }
 
-bool FrameNet::lexicalUnitExists(string synSetId) {
+bool FrameNet::lexicalUnitExists(const string& synSetId) {
     for (Frame frame : frames){
         if (frame.lexicalUnitExists(synSetId)){
             return true;
@@ -37,7 +37,7 @@ bool FrameNet::lexicalUnitExists(string synSetId) {
     return false;
 }
 
-vector<Frame> FrameNet::getFrames(string synSetId) {
+vector<Frame> FrameNet::getFrames(const string& synSetId) {
     vector<Frame> result;
     for (Frame frame : frames){
         if (frame.lexicalUnitExists(synSetId)){

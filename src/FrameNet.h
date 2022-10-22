@@ -12,8 +12,8 @@ private:
     vector<Frame> frames;
 public:
     FrameNet();
-    bool lexicalUnitExists(string synSetId);
-    vector<Frame> getFrames(string synSetId);
+    bool lexicalUnitExists(const string& synSetId);
+    vector<Frame> getFrames(const string& synSetId);
     int size();
     Frame getFrame(int index);
 };
