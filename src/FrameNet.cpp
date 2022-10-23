@@ -28,8 +28,8 @@ FrameNet::FrameNet() {
     }
 }
 
-bool FrameNet::lexicalUnitExists(const string& synSetId) {
-    for (Frame frame : frames){
+bool FrameNet::lexicalUnitExists(const string& synSetId) const{
+    for (const Frame& frame : frames){
         if (frame.lexicalUnitExists(synSetId)){
             return true;
         }
@@ -37,9 +37,9 @@ bool FrameNet::lexicalUnitExists(const string& synSetId) {
     return false;
 }
 
-vector<Frame> FrameNet::getFrames(const string& synSetId) {
+vector<Frame> FrameNet::getFrames(const string& synSetId) const{
     vector<Frame> result;
-    for (Frame frame : frames){
+    for (const Frame& frame : frames){
         if (frame.lexicalUnitExists(synSetId)){
             result.emplace_back(frame);
         }
@@ -47,10 +47,10 @@ vector<Frame> FrameNet::getFrames(const string& synSetId) {
     return result;
 }
 
-int FrameNet::size() {
+int FrameNet::size() const{
     return frames.size();
 }
 
-Frame FrameNet::getFrame(int index) {
+Frame FrameNet::getFrame(int index) const{
     return frames.at(index);
 }

@@ -41,7 +41,7 @@ FrameElement::FrameElement(const string& _frameElementType, const string& _frame
  *
  * @return frameElementType.
  */
-string FrameElement::getFrameElementType() {
+string FrameElement::getFrameElementType() const{
     return frameElementType;
 }
 
@@ -50,7 +50,7 @@ string FrameElement::getFrameElementType() {
  *
  * @return id.
  */
-string FrameElement::getId() {
+string FrameElement::getId() const{
     return id;
 }
 
@@ -59,7 +59,7 @@ string FrameElement::getId() {
  *
  * @return frame.
  */
-string FrameElement::getFrame() {
+string FrameElement::getFrame() const{
     return frame;
 }
 
@@ -69,7 +69,7 @@ string FrameElement::getFrame() {
  *
  * @return string form of frameElement
  */
-string FrameElement::to_string() {
+string FrameElement::to_string() const{
     if (frameElementType == "NONE"){
         return frameElementType;
     } else {

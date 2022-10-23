@@ -10,27 +10,27 @@ Frame::Frame(const string& _name) {
     this->name = _name;
 }
 
-bool Frame::lexicalUnitExists(const string& synSetId) {
+bool Frame::lexicalUnitExists(const string& synSetId) const{
     return find(lexicalUnits.begin(), lexicalUnits.end(), synSetId) != lexicalUnits.end();
 }
 
-string Frame::getLexicalUnit(int index) {
+string Frame::getLexicalUnit(int index) const{
     return lexicalUnits.at(index);
 }
 
-string Frame::getFrameElement(int index) {
+string Frame::getFrameElement(int index) const{
     return frameElements.at(index);
 }
 
-int Frame::lexicalUnitSize() {
+int Frame::lexicalUnitSize() const{
     return lexicalUnits.size();
 }
 
-int Frame::frameElementSize() {
+int Frame::frameElementSize() const{
     return frameElements.size();
 }
 
-string Frame::getName() {
+string Frame::getName() const{
     return name;
 }
 

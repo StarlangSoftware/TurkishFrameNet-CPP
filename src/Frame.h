@@ -18,14 +18,14 @@ private:
     vector<string> frameElements;
 public:
     explicit Frame(const string& _name);
-    bool lexicalUnitExists(const string& synSetId);
+    bool lexicalUnitExists(const string& synSetId) const;
     void addLexicalUnit(const string& lexicalUnit);
     void addFrameElement(const string& frameElement);
-    string getLexicalUnit(int index);
-    string getFrameElement(int index);
-    int lexicalUnitSize();
-    int frameElementSize();
-    string getName();
+    string getLexicalUnit(int index) const;
+    string getFrameElement(int index) const;
+    int lexicalUnitSize() const;
+    int frameElementSize() const;
+    string getName() const;
 };
 
 

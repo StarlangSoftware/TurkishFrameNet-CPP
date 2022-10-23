@@ -12,10 +12,10 @@ private:
     vector<Frame> frames;
 public:
     FrameNet();
-    bool lexicalUnitExists(const string& synSetId);
-    vector<Frame> getFrames(const string& synSetId);
-    int size();
-    Frame getFrame(int index);
+    bool lexicalUnitExists(const string& synSetId) const;
+    vector<Frame> getFrames(const string& synSetId) const;
+    int size() const;
+    Frame getFrame(int index) const;
 };
 
 
