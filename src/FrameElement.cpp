@@ -3,8 +3,6 @@
 //
 
 #include "FrameElement.h"
-
-#include "FrameElement.h"
 using namespace std;
 
 /**
@@ -12,7 +10,7 @@ using namespace std;
  * and parses this string into frameElementType and id. If the frameElement string does not contain '$' then the
  * constructor return a NONE type frameElement.
  *
- * @param argument  FrameElement string containing the frameElementType and id
+ * @param frameElement  FrameElement string containing the frameElementType and id
  */
 FrameElement::FrameElement(const string& frameElement) {
     if (frameElement.find('$') != string::npos){
@@ -27,7 +25,8 @@ FrameElement::FrameElement(const string& frameElement) {
 /**
  * Another constructor of {@link FrameElement} class which takes _frameElementType and _id as inputs and initializes corresponding attributes
  *
- * @param argumentType  Type of the frameElement
+ * @param _frameElementType  Type of the frameElement
+ * @param _frame  Frame of the frameElement
  * @param _id  Id of the frameElement
  */
 FrameElement::FrameElement(const string& _frameElementType, const string& _frame, const string& _id) {
