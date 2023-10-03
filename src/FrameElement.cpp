@@ -6,7 +6,7 @@
 using namespace std;
 
 /**
- * A constructor of {@link FrameElement} class which takes frameElement string which is in the form of frameElementType$id
+ * A constructor of FrameElement class which takes frameElement string which is in the form of frameElementType$id
  * and parses this string into frameElementType and id. If the frameElement string does not contain '$' then the
  * constructor return a NONE type frameElement.
  *
@@ -23,7 +23,7 @@ FrameElement::FrameElement(const string& frameElement) {
 }
 
 /**
- * Another constructor of {@link FrameElement} class which takes _frameElementType and _id as inputs and initializes corresponding attributes
+ * Another constructor of FrameElement class which takes _frameElementType and _id as inputs and initializes corresponding attributes
  *
  * @param _frameElementType  Type of the frameElement
  * @param _frame  Frame of the frameElement
@@ -63,7 +63,7 @@ string FrameElement::getFrame() const{
 }
 
 /**
- * to_string converts an {@link FrameElement} to a string. If the frameElementType is "NONE" returns only "NONE", otherwise
+ * to_string converts an FrameElement to a string. If the frameElementType is "NONE" returns only "NONE", otherwise
  * it returns frameElement string which is in the form of frameElementType$id
  *
  * @return string form of frameElement
