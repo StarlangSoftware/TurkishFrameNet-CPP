@@ -3,7 +3,6 @@
 //
 
 #include "Frame.h"
-#include <utility>
 #include <algorithm>
 
 Frame::Frame(const string& _name) {
