@@ -10,7 +10,7 @@ using namespace std;
 
 TEST_CASE("FrameNetTest-testFrameSize") {
     FrameNet frameNet = FrameNet();
-    REQUIRE(139 == frameNet.size());
+    REQUIRE(809 == frameNet.size());
 }
 
 TEST_CASE("FrameNetTest-testLexicalUnitSize") {
@@ -19,7 +19,7 @@ TEST_CASE("FrameNetTest-testLexicalUnitSize") {
     for (int i = 0; i < frameNet.size(); i++){
         count += frameNet.getFrame(i).lexicalUnitSize();
     }
-    REQUIRE(2561 == count);
+    REQUIRE(8489 == count);
 }
 
 TEST_CASE("FrameNetTest-testFrameElementSize") {
@@ -28,7 +28,7 @@ TEST_CASE("FrameNetTest-testFrameElementSize") {
     for (int i = 0; i < frameNet.size(); i++){
         count += frameNet.getFrame(i).frameElementSize();
     }
-    REQUIRE(1665 == count);
+    REQUIRE(8656 == count);
 }
 
 TEST_CASE("FrameNetTest-testDistinctFrameElements") {
@@ -39,5 +39,5 @@ TEST_CASE("FrameNetTest-testDistinctFrameElements") {
             elements.emplace(frameNet.getFrame(i).getFrameElement(j));
         }
     }
-    REQUIRE(289 == elements.size());
+    REQUIRE(1012 == elements.size());
 }
