@@ -20,6 +20,7 @@ public:
     string getFrame() const;
     string getId() const;
     string to_string() const;
+    void setId(const string& _id);
 };
 
 

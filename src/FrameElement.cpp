@@ -76,3 +76,10 @@ string FrameElement::to_string() const{
     }
 }
 
+/**
+ * Setter for the id
+ * @param id New id of the frame element.
+ */
+void FrameElement::setId(const string& _id) {
+    this->id = _id;
+}
