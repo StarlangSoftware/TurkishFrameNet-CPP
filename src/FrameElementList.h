@@ -16,12 +16,12 @@ private:
 public:
     FrameElementList(const string& frameElementList);
     string to_string() const;
-    void updateConnectedId(const string& previousId, const string& currentId);
+    void updateConnectedId(const string& previousId, const string& currentId) const;
     void addPredicate(const string& predicateId);
     void removePredicate();
     bool containsPredicate() const;
     bool containsPredicateWithId(const string& predicateId) const;
-    vector<string> getFrameElements();
+    vector<string> getFrameElements() const;
     bool containsFrameElement(const string& frameElementType, const string& frame, const string& id) const;
 };
 

@@ -39,7 +39,7 @@ string FrameElementList::to_string() const {
  * @param previousId Previous id of the synset.
  * @param currentId Replacement id.
  */
-void FrameElementList::updateConnectedId(const string &previousId, const string &currentId) {
+void FrameElementList::updateConnectedId(const string &previousId, const string &currentId) const {
     for (FrameElement frameElement: frameElements){
         if (frameElement.getId() == previousId){
             frameElement.setId(currentId);
@@ -101,7 +101,7 @@ bool FrameElementList::containsPredicateWithId(const string &predicateId) const 
  * Returns the frame elements as an array list of strings.
  * @return Frame elements as an array list of strings.
  */
-vector<string> FrameElementList::getFrameElements() {
+vector<string> FrameElementList::getFrameElements() const {
     vector<string> result;
     result.reserve(frameElements.size());
     for (const FrameElement& frameElement: frameElements){

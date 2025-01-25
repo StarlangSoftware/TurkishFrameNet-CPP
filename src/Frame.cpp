@@ -8,7 +8,7 @@
 /**
  * Constructor of Frame class which takes inputStream as input and reads the frame
  *
- * @param name  Name of the frame
+ * @param _name  Name of the frame
  */
 Frame::Frame(const string& _name) {
     this->name = _name;
@@ -16,7 +16,7 @@ Frame::Frame(const string& _name) {
 
 /**
  * Checks if the given lexical unit exists in the current frame
- * @param lexicalUnit Lexical unit to be searched.
+ * @param synSetId Lexical unit to be searched.
  * @return True if the lexical unit exists, false otherwise.
  */
 bool Frame::lexicalUnitExists(const string& synSetId) const{
