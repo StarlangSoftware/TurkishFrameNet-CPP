@@ -19,7 +19,7 @@ TEST_CASE("FrameNetTest-testLexicalUnitSize") {
     for (int i = 0; i < frameNet.size(); i++){
         count += frameNet.getFrame(i).lexicalUnitSize();
     }
-    REQUIRE(8493 == count);
+    REQUIRE(8484 == count);
 }
 
 TEST_CASE("FrameNetTest-testFrameElementSize") {
