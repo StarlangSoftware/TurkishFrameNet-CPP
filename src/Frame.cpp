@@ -20,7 +20,7 @@ Frame::Frame(const string& _name) {
  * @return True if the lexical unit exists, false otherwise.
  */
 bool Frame::lexicalUnitExists(const string& synSetId) const{
-    return find(lexicalUnits.begin(), lexicalUnits.end(), synSetId) != lexicalUnits.end();
+    return ranges::find(lexicalUnits, synSetId) != lexicalUnits.end();
 }
 
 /**

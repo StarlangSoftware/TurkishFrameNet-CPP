@@ -6,8 +6,6 @@
 #define FRAMENET_FRAME_H
 #include <string>
 #include <vector>
-#include "XmlElement.h"
-#include "XmlDocument.h"
 
 using namespace std;
 
@@ -18,14 +16,14 @@ private:
     vector<string> frameElements;
 public:
     explicit Frame(const string& _name);
-    bool lexicalUnitExists(const string& synSetId) const;
+    [[nodiscard]] bool lexicalUnitExists(const string& synSetId) const;
     void addLexicalUnit(const string& lexicalUnit);
     void addFrameElement(const string& frameElement);
-    string getLexicalUnit(int index) const;
-    string getFrameElement(int index) const;
-    int lexicalUnitSize() const;
-    int frameElementSize() const;
-    string getName() const;
+    [[nodiscard]] string getLexicalUnit(int index) const;
+    [[nodiscard]] string getFrameElement(int index) const;
+    [[nodiscard]] int lexicalUnitSize() const;
+    [[nodiscard]] int frameElementSize() const;
+    [[nodiscard]] string getName() const;
 };
 
 

@@ -14,15 +14,15 @@ class FrameElementList {
 private:
     vector<FrameElement> frameElements;
 public:
-    FrameElementList(const string& frameElementList);
-    string to_string() const;
+    explicit FrameElementList(const string& frameElementList);
+    [[nodiscard]] string to_string() const;
     void updateConnectedId(const string& previousId, const string& currentId) const;
     void addPredicate(const string& predicateId);
     void removePredicate();
-    bool containsPredicate() const;
-    bool containsPredicateWithId(const string& predicateId) const;
-    vector<string> getFrameElements() const;
-    bool containsFrameElement(const string& frameElementType, const string& frame, const string& id) const;
+    [[nodiscard]] bool containsPredicate() const;
+    [[nodiscard]] bool containsPredicateWithId(const string& predicateId) const;
+    [[nodiscard]] vector<string> getFrameElements() const;
+    [[nodiscard]] bool containsFrameElement(const string& frameElementType, const string& frame, const string& id) const;
 };
 
 

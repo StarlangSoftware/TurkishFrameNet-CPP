@@ -16,10 +16,10 @@ private:
 public:
     explicit FrameElement(const string& frameElement);
     FrameElement(const string& _frameElementType, const string& _frame, const string& _id);
-    string getFrameElementType() const;
-    string getFrame() const;
-    string getId() const;
-    string to_string() const;
+    [[nodiscard]] string getFrameElementType() const;
+    [[nodiscard]] string getFrame() const;
+    [[nodiscard]] string getId() const;
+    [[nodiscard]] string to_string() const;
     void setId(const string& _id);
 };
 

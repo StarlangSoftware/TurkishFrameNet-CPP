@@ -3,6 +3,7 @@
 //
 
 #include "FrameNet.h"
+#include "XmlDocument.h"
 
 /**
  * A constructor of FrameNet class which reads all frame files inside the files2.txt file. For each
